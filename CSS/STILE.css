@@ -3,30 +3,69 @@ body {
     font-family: 'Noto Serif', serif;
     background-color: #f8f9fa;
     color: #2d3436;
-    line-height: 1.7;
+    line-height: 1.6; /* Leggermente ridotto per una migliore leggibilità */
+    -webkit-font-smoothing: antialiased; /* Migliora la resa del font su WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Migliora la resa del font su Firefox */
 }
 
 header {
     text-align: center;
-    padding: 25px 15px;
+    padding: 30px 20px; /* Aumentato il padding */
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* ------------------------- Earthquake Color Theme ------------------------- */
-.intro {
-    max-width: 800px;
+/* ------------------------- General Styles ------------------------- */
+main {
+    margin-bottom: 50px; /* Added margin to the bottom of the main content */
+}
+
+section {
     margin: 50px auto;
     padding: 30px;
+    max-width: 1000px; /* Slightly reduced max-width */
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+    font-size: 2.2rem; /* Slightly reduced h1 size */
+    color: #2d3436;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+h2 {
+    font-size: 1.3rem; /* Slightly reduced h2 size */
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 25px 0; /* Adjusted margin */
+}
+
+h3 {
+    font-size: 1.5rem; /* Slightly reduced h3 size */
+    color: #2d3436;
+    font-weight: 600;
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+p {
+    font-size: 1.05rem; /* Slightly reduced paragraph size */
+    color: #636e72;
+    margin-bottom: 15px; /* Adjusted margin */
+}
+
+/* ------------------------- Intro Section ------------------------- */
+.intro {
     position: relative;
     overflow: hidden;
 }
 
-.intro:before {
+.intro::before {
     content: '';
     position: absolute;
     top: 0;
@@ -36,97 +75,138 @@ header {
     background: #e74c3c;
 }
 
-.intro p {
-    font-size: 1.1rem;
-    color: #636e72;
-    margin: 20px 0;
-}
-
-.main-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 25px 0;
-    filter: grayscale(20%);
-}
-
-/* ------------------------- Typography ------------------------- */
-h1 {
-    font-size: 2.5rem;
-    color: #2d3436;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.4rem;
-    color: #e74c3c;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 30px 0;
-}
-
-h3 {
-    font-size: 1.6rem;
-    color: #2d3436;
-    font-weight: 600;
+/* ------------------------- Main Image ------------------------- */
+.image-container {
+    position: relative;
+    text-align: center; /* Center the image and caption */
     margin-bottom: 25px;
 }
 
-/* ------------------------- Content Sections ------------------------- */
-.section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 50px auto;
-    padding: 30px;
-    max-width: 1200px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-}
-
-.box {
-    position: relative;
-    overflow: hidden;
+.main-image {
+    max-width: 80%; /* Reduced image width */
+    height: auto;
     border-radius: 8px;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    cursor: zoom-in;
+    transition: transform 0.3s ease-in-out;
 }
 
-.box:hover {
-    transform: translateY(-8px);
+.main-image:hover {
+    transform: scale(1.05);
 }
 
-.box img {
+.image-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .image-caption {
+    opacity: 1;
+}
+
+/* ------------------------- Map Section ------------------------- */
+.map-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax */
+    gap: 20px;
+}
+
+.map-box {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.map-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.map-box img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-bottom: 3px solid #e74c3c;
+    height: auto;
+    display: block;
 }
 
-.box p {
-    padding: 20px;
-    background: #f8f9fa;
-    color: #2d3436;
+/* ------------------------- Before-After Section ------------------------- */
+.before-after-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.before-after-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.before-after-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.before-after-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.9em;
     margin: 0;
-    font-size: 0.95rem;
 }
 
-/* ------------------------- Multimedia ------------------------- */
+/* ------------------------- Video Section ------------------------- */
+.video-section {
+    text-align: center;
+}
+
 .video-container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 600px;
+    margin: 20px auto;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: inline-block; /* Changed to inline-block */
+    vertical-align: top; /* Align with caption */
+}
+
+.video-container:hover {
+    transform: scale(1.02);
 }
 
 video {
     width: 100%;
     height: auto;
-    border: 2px solid #f8f9fa;
+}
+
+.video-caption {
+    font-size: 0.9em;
+    color: #636e72;
+    margin-top: 10px;
+    display: block;
 }
 
 /* ------------------------- Footer ------------------------- */
@@ -134,167 +214,55 @@ footer {
     background: #2d3436;
     color: #dfe6e9;
     padding: 25px;
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: 0.9rem;
+    text-align: center; /* Centered footer text */
 }
 
-footer:before {
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* ------------------------- Responsive Design ------------------------- */
+/* ------------------------- Media Queries ------------------------- */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
-    
-    .intro {
-        margin: 30px 15px;
-        padding: 20px;
+
+    h2 {
+        font-size: 1.2rem;
     }
-    
-    .box img {
-        height: 200px;
+
+    h3 {
+        font-size: 1.4rem;
     }
-    
+
     .section {
-        margin: 30px 15px;
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .map-section,
+    .before-after-section {
+        grid-template-columns: 1fr; /* Stack on small screens */
+    }
+
+    .image-container {
+        width: 90%;
+        margin: 0 auto 20px;
+    }
+
+    .main-image {
+        max-width: 100%;
+    }
+
+    .video-container {
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .main-image {
-        height: 250px;
+    h1 {
+        font-size: 1.8rem;
     }
-    
-    h2 {
-        font-size: 1.2rem;
-    }
-}
 
-/* Aggiungi queste regole al CSS esistente */
-
-/* ------------------------- Header Enhancements ------------------------- */
-header {
-    padding: 2rem 1rem;
-    border-bottom: 3px solid #e74c3c;
-    position: relative;
-    z-index: 2;
-}
-
-h1 {
-    text-shadow: 1px 1px 2px rgba(45, 52, 54, 0.1);
-}
-
-h2 {
-    font-weight: 600;
-    margin-top: 0;
-}
-
-/* ------------------------- Intro Section Refinements ------------------------- */
-.intro:before {
-    width: 5px;
-    background: linear-gradient(to bottom, #e74c3c 0%, #c0392b 100%);
-}
-
-.data-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-}
-
-.highlight {
-    border-left: 3px solid #e74c3c;
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-}
-
-/* ------------------------- Image Enhancements ------------------------- */
-.box img {
-    border-bottom-width: 4px;
-    transition: filter 0.3s ease;
-}
-
-.box:hover img {
-    filter: brightness(1.05);
-}
-
-figcaption {
-    padding: 1rem;
-    font-size: 0.9em;
-    color: #636e72;
-    text-align: center;
-    background: #f8f9fa;
-}
-
-/* ------------------------- Video Section Tweaks ------------------------- */
-.video-wrapper {
-    position: relative;
-    background: #2d3436;
-    padding: 8px;
-    border-radius: 12px;
-}
-
-video {
-    border-radius: 8px;
-}
-
-.video-caption {
-    margin-top: 1rem;
-    font-size: 0.95em;
-    color: #636e72;
-    text-align: center;
-}
-
-/* ------------------------- Footer Improvements ------------------------- */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-links a {
-    color: #dfe6e9;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #e74c3c;
-}
-
-.disclaimer {
-    text-align: center;
-    margin-top: 1.5rem;
-    opacity: 0.8;
-}
-
-/* ------------------------- Hover Effects ------------------------- */
-a {
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* ------------------------- Responsive Tweaks ------------------------- */
-@media (max-width: 680px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-    }
-    
-    .data-grid {
-        grid-template-columns: 1fr;
+    header {
+        padding: 20px 10px;
     }
 }

@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Terremoto in Myanmar </title>
+    <title>Terremoto in Myanmar</title>
     <link rel="stylesheet" href="CSS/STILE.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1> TERREMOTO IN MYANMAR </h1>
-        <h2> Conseguenze di un sisma devastante </h2>
+        <h1>TERREMOTO IN MYANMAR</h1>
+        <h2>Conseguenze di un sisma devastante</h2>
     </header>
     <main>
-        <img class="main-image" src="IMG/intro.png" alt="Immagine principale">
-        <div class="intro">
-            <h2> Alcuni dati importanti: </h2>
+        <div class="image-container">
+            <a href="IMG/intro.png" target="_blank" rel="noopener noreferrer">
+                <img class="main-image" src="IMG/intro.png" alt="Mappa del terremoto">
+            </a>
+            <p class="image-caption">Clicca per ingrandire</p>
+        </div>
+
+
+        <section class="intro">
+            <h2>Alcuni dati importanti:</h2>
             <p>
                 Il terremoto in Myanmar, più precisamente il terremoto di Sagaing del 2025 è stato un evento
                 sismico avvenuto in Birmania il 28 Marzo 2025 verso le 12 e 50.
@@ -29,53 +39,63 @@
                 Il sisma è avvenuto a 10 chilometri di profondità vicino alla città di Mandalay ed è risultato
                 il più forte terremoto mai avvenuto dal 1912, anno in cui avvenne un sisma di magnitudo 8,0.
             </p>
-        </div>
+        </section>
 
-        <h3> Cartine dell'epicentro: </h3>
+        <h3>Cartine dell'epicentro:</h3>
 
-        <section class="section">
-            <div class="box">
-                <img src="IMG/cartinaEpicentro.jpg" alt="Cartina dell'epicentro">
+        <section class="section map-section">
+            <div class="box map-box">
+                <a href="IMG/cartinaEpicentro.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="IMG/cartinaEpicentro.jpg" alt="Mappa dell'epicentro 1">
+                </a>
             </div>
-            <div class="box">
-                <img src="IMG/cartinaEpicentro2.jpg" alt="Cartina dell'epicentro">
+            <div class="box map-box">
+                <a href="IMG/cartinaEpicentro2.jpg" target="_blank" rel="noopener noreferrer">
+                    <img src="IMG/cartinaEpicentro2.jpg" alt="Mappa dell'epicentro 2">
+                </a>
             </div>
         </section>
 
-        <div class="intro">
-            <h2> Prima e Dopo: </h2>
+        <section class="intro">
+            <h2>Prima e Dopo:</h2>
             <p>
                 Di seguito verranno proposte alcune immagini delle conseguenze devastanti che hanno colpito il paese,
                 nello specifico sarà possibile visualizzare com'era un determinato luogo prima del terremoto e com'è
                 dopo il sisma.
             </p>
-        </div>
-        
-        <section class="section">
-            <div class="box">
-                <img src="IMG/prima2.png" alt="Immagine Prima">
-                <p> PRIMA </p>
+        </section>
+
+        <section class="section before-after-section">
+            <div class="box before-after-box">
+                <a href="IMG/prima2.png" target="_blank" rel="noopener noreferrer">
+                    <img src="IMG/prima2.png" alt="Situazione prima del terremoto">
+                </a>
+                <p class="image-label">PRIMA</p>
             </div>
-            <div class="box">
-                <img src="IMG/dopo2.png" alt="Immagine Dopo">
-                <p> DOPO </p>
+            <div class="box before-after-box">
+                <a href="IMG/dopo2.png" target="_blank" rel="noopener noreferrer">
+                    <img src="IMG/dopo2.png" alt="Situazione dopo il terremoto">
+                </a>
+                <p class="image-label">DOPO</p>
             </div>
         </section>
 
-        <section class="video">
-            <h3> BREVE VIDEO: </h3>
-            <video width="800" controls>
-                <source src="IMG/Timelapse.mp4" type="video/mp4">
-            </video>
-            <p> 
-                In questo breve video è presente un timelapse che visualizza il prima 
-                e dopo in una vasta area selezionata.
-            </p>
+        <section class="video-section">
+            <h3>BREVE VIDEO:</h3>
+            <div class="video-container">
+                <video controls>
+                    <source src="IMG/Timelapse.mp4" type="video/mp4">
+                    Il tuo browser non supporta i video.
+                </video>
+            </div>
+            <p class="video-caption">Timelapse dell'area colpita dal sisma</p>
         </section>
 
     </main>
     <footer>
-        <p> © 2025. Tutti i diritti riservati. </p>
+        <p>© 2025. Tutti i diritti riservati.</p>
+        <p>Questo sito è stato realizzato per il progetto di GPI del 2025.</p>
+        <p>Prodotto da Baschera Alessio, Maoli Pietro, Scartezzini Alessio</p>
     </footer>
 </body>
 
